@@ -1,0 +1,309 @@
+/* Navbar Styles */
+.custom-navbar {
+  background-color: rgba(255, 255, 255, 0.1); /* transparent white */
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease-in-out;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.4rem;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.custom-navbar .navbar-brand span {
+  color: #0d6efd;
+}
+
+.custom-navbar .nav-link {
+  position: relative;
+  margin-left: 1rem;
+  color: #000 !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.custom-navbar .nav-link::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #0d6efd;
+  transition: 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.custom-navbar .nav-link:hover::after {
+  width: 100%;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #0d6efd !important;
+}
+
+@media (max-width: 991px) {
+  .custom-navbar .navbar-nav {
+    background-color: rgba(255,255,255,0.95);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .custom-navbar .nav-link {
+    color: #000 !important;
+  }
+}
+
+/* Hero Section Styling */
+.hero-section {
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+              url('../sumitek/Photos/footer-logo-icon.webp') center center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 15px;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Glass-style card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Scroll cue icon */
+.scroll-down {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.7;
+  animation: bounce 2s infinite;
+}
+
+/* Text fade-in animation */
+.animate-fadein {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards;
+}
+
+.delay-1 { animation-delay: 0.4s; }
+.delay-2 { animation-delay: 0.8s; }
+.delay-3 { animation-delay: 1.2s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.img-fluid {
+  transition: 0.3s ease;
+}
+
+.img-fluid:hover {
+  transform: scale(1.05);
+}
+
+/* Make captions stand out */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Fade effect timing */
+.carousel-fade .carousel-item {
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* Image styling */
+.carousel-item img {
+  object-fit: cover;
+  height: 600px; /* match your chosen px height */
+}
+/* Change carousel arrow color */
+:root {
+  /* Carousel Control Vars */
+  --carousel-arrow-bg: rgba(255, 255, 255, 0.3); /* circle behind arrow */
+  --carousel-arrow-size: 3rem;                   /* circle diameter */
+  --carousel-arrow-pad: 0.5rem;                  /* space around arrow glyph */
+
+  /* Carousel Indicator Vars */
+  --carousel-dot-size: 12px;                     /* diameter of dots */
+  --carousel-dot-inactive: rgba(255, 255, 255, 0.5); /* color of non‑active dots */
+  --carousel-dot-active: #0d6efd;                 /* color of the active dot */
+}
+
+#photoCarousel .carousel-control-prev-icon,
+#photoCarousel .carousel-control-next-icon {
+  filter: invert(100%) brightness(200%);        /* make the SVG arrow white */
+  background-color: var(--carousel-arrow-bg);
+  border-radius: 50%;
+  width: var(--carousel-arrow-size);
+  height: var(--carousel-arrow-size);
+  padding: var(--carousel-arrow-pad);
+}
+
+#photoCarousel .carousel-indicators [data-bs-target] {
+  width: var(--carousel-dot-size);
+  height: var(--carousel-dot-size);
+  background-color: var(--carousel-dot-inactive);
+  border-radius: 50%;
+}
+
+#photoCarousel .carousel-indicators .active {
+  background-color: var(--carousel-dot-active);
+}
+
+#about h2 {
+  font-size: 2.2rem;
+}
+
+#about ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contact-modern {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.map-bg iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.3) brightness(0.7);
+  z-index: 1;
+}
+
+.contact-card {
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(15px);
+  background: rgba(0, 0, 0, 0.45);
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  margin-top: 80px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+/* Form inputs */
+.contact-card input,
+.contact-card textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+}
+
+.contact-card input::placeholder,
+.contact-card textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Floating icons */
+.floating-icons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 20px;
+  opacity: 0.3;
+  animation: floatIcons 8s infinite ease-in-out;
+}
+
+.floating-icons i {
+  font-size: 1.8rem;
+}
+
+@keyframes floatIcons {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.tilt-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+.tilt-card:hover {
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+/* Enable 3D tilt with JavaScript */
+
+.footer a:hover {
+  color: #8c52ff;
+  transition: color 0.3s ease;
+}
+
+
+.footer-modern {
+  background: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-link {
+  color: #6c757d;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #8c52ff;
+  padding-left: 6px;
+}
+
+.footer-social {
+  font-size: 1.2rem;
+  color: #6c757d;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social:hover {
+  color: #8c52ff;
+  transform: scale(1.2);
+}
+
